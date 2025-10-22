@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "09b5c310-4e89-432c-bf2f-378129b27309",
+		"name": "Tugas 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49276840",
+		"_collection_link": "https://marvinjunaidi-2327240003-7155314.postman.co/workspace/Marvin's-Workspace~4e7d05d6-eeb4-41f3-89bf-e04fdcd34b08/collection/49276840-09b5c310-4e89-432c-bf2f-378129b27309?action=share&source=collection_link&creator=49276840"
+	},
+	"item": [
+		{
+			"name": "Create New Akun",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "List Akun",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update Akun",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Akun",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

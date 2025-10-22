@@ -1,12 +1,13 @@
-import express from 'express';
+import express from "express"
+import api from "./route/api.js"
+import database from "./config/database.js"
 
-const app = express();
+const app = express()
+app.use(express.json())
 
-app.set('view engine', 'ejs');
-app.get('/', function (req, res) {
-  res.render("index");
-});
+app.use('/api', api)
 
 app.listen(3000, () => {
-  console.log(`Server berhasil berjalan di http://localhost:3000`);
-});
+  database ()
+  console.log(`Aplikasi berjalan di http://localhost:3000`)
+})

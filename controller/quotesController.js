@@ -1,11 +1,11 @@
 import { response } from "express";
-import QuotesModel from "../model/quotesModel";
+import quotesModel from "../model/quotesModel.js";
 
 export const createNewAkun= async (req, res) => {
 try {
     const request = req.body
     console.log(request);
-    const response = await QuotesModel.create({
+    const response = await quotesModel.create({
         quote : request.quote,
         author : request.author,
         category : request.category
@@ -23,12 +23,12 @@ try {
 }
 }
 
-export const listMahasiswa = async (req, res) => {
+export const listAkun = async (req, res) => {
     try {
-        const data = await mahasiswaModel.find({})
+        const data = await quotesModel.find({})
 
         res.status(200).json({
-            message : "List mahasiswa",
+            message : "List Akun",
             data : data
         })
         
@@ -40,7 +40,7 @@ export const listMahasiswa = async (req, res) => {
     }
 }
 
-export const updateMahasiswa = async (req, res) => {
+export const updateAkun = async (req, res) => {
     try {
         const id = req.params?.id
         const request = req.body
@@ -51,20 +51,20 @@ export const updateMahasiswa = async (req, res) => {
         data : null
     })
         }
-    const response = await mahasiswaModel.findByIdAndUpdate(id, {
-        nama : request.nama,
-        npm : request.npm,
-        jurusan : request.jurusan
+    const response = await quotesModel.findByIdAndUpdate(id, {
+        quote : request.quote,
+        author : request.author,
+        category : request.category
     }) 
     
     if(!response){
         return res.status(500).json({
-        message : "Mahasiswa gagal diupdate",
+        message : "Akun gagal diupdate",
         data : null
     })
     }
     return res.status(200).json({
-        message : "Mahasiswa Berhasil diupdate",
+        message : "Akun Berhasil diupdate",
         data : null
     })
     } catch (error) {
@@ -75,7 +75,7 @@ export const updateMahasiswa = async (req, res) => {
     }
 }
 
-export const deleteMahasiswa = async (req, res) => {
+export const deleteAkun = async (req, res) => {
     try {
         const id = req.params.id
         
@@ -86,17 +86,17 @@ export const deleteMahasiswa = async (req, res) => {
     })
         }
 
-    const response = await mahasiswaModel.findByIdAndDelete(id)
+    const response = await quotesModel.findByIdAndDelete(id)
 
     if (response){
         return res.status(200).json({
-        message : "Message berhasil dihapus",
+        message : "Akun berhasil dihapus",
         data : null
     })
     }
 
     return res.status(404).json({
-        message : "Message tidak ditemukan",
+        message : "Akun tidak ditemukan",
         data : null
     })
     } catch (error) {
